@@ -3,7 +3,7 @@ const path = require('path');
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const writeJson = (database) =>{
-	fs.writeFileSync(path.join(__dirname, '../data/productsDataBase.json'), JSON.stringify(database), "utf-8")
+	fs.writeFileSync(path.join(__dirname, '../data/productsDataBase.json'), JSON.stringify(database), "utf-8");
 }
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
@@ -76,7 +76,6 @@ const controller = {
 
 	},
 
-	
 	// Update - Method to update
 	update: (req, res) => {
 
@@ -85,7 +84,8 @@ const controller = {
 			price,
 			discount, 
 			category, 
-			description} =req.body
+			description
+		} = req.body
 
 		products.forEach(product =>{
 			if(product.id === +req.params.id){

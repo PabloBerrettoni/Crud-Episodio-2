@@ -20,9 +20,7 @@ router.get('/detail/:id/', productsController.detail);
 router.get('/edit/:id', productsController.edit);
 router.put('/edit/:id',  multer.single('image'),productsController.update);
 
-
 /*** DELETE ONE PRODUCT***/ 
 router.delete('/delete/:id', productsController.destroy);
-
 
 module.exports = router;
