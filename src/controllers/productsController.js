@@ -45,25 +45,17 @@ const controller = {
 		let lastId = 1;
 		products.forEach(product => {
 			if (product.id > lastId){
-				lastId = product.id
-			}
-			
+				lastId = product.id;
+			}			
 		});
-
-		const{
-			name,
-			price,
-			discount, 
-			category, 
-			description} =req.body
 
 		let newProduct ={
 			id: lastId + 1,
-			name,
-			price,
-			discount, 
-			category, 
-			description,
+			name: req.body.name,
+			price: +req.body.price,
+			discount: +req.body.discount, 
+			category: req.body.category, 
+			description: req.body.description,
 			image: req.file ? req.file.filename : "default-image.png"
 		}
 
